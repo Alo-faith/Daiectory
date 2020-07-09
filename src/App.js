@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import WandsList from "./component/WandsList.js";
+import { Route, Switch } from "react-router";
+import wands from "./wands.js";
+import Details from "./component/Details";
 
 function App() {
+  const [_wands, setWands] = useState(wands);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1> Directoy </h1>
+
+      <Switch>
+        <Route path="/:wandId">
+          <Details wands={_wands} />
+        </Route>
+
+        <Route path="/">
+          <WandsList wands={_wands} />
+        </Route>
+      </Switch>
+    </>
   );
 }
 
