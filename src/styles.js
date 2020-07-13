@@ -176,9 +176,9 @@ export const WandWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 95%;
-  height: 800px;
+  /* height: 800px; */
   background-color: #ede7e3;
-
+  padding-bottom: 5px;
   h1 {
     background-color: #2d3142;
     color: #ffffff;
@@ -197,6 +197,7 @@ export const WandWrapper = styled.div`
     color: brown;
     text-align: center;
     padding-top: 20px;
+    cursor: pointer;
   }
 `;
 
@@ -230,5 +231,27 @@ export const DetailsLikesDiv = styled.div`
     height: 45px;
     margin-right: 20px;
     padding: 1px;
+  }
+`;
+//  Recomanded
+
+export const RecomandedStyle = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+  background-color: white;
+  width: 900px;
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid #2d3142;
+  img {
+    width: 150px;
+    border: 2px solid #2d3142;
+  }
+  h4 {
+    font-size: 18px;
   }
 `;

@@ -12,24 +12,26 @@ import showimage from "../images/showimage.png";
 import showlist from "../images/showlist.png";
 
 const WandsList = ({ wands, updatedSort, setUpdatedSort, show, setShow }) => {
+  const _wands = wands;
   const [query, setQuery] = useState("");
 
   const sortWands = (event) => {
-    console.log(event);
+    // console.log(event);
 
     switch (event) {
       case "1":
         return setUpdatedSort(wands);
-
       case "2":
-        return setUpdatedSort(wands.sort((a, b) => (a.core > b.core ? 1 : -1)));
+        return setUpdatedSort(
+          _wands.sort((a, b) => (a.core > b.core ? 1 : -1))
+        );
       case "3":
         return setUpdatedSort(wands.filter((wand) => wand.likes > 2));
-
       default:
         return setUpdatedSort(wands);
     }
   };
+
   // search
   const filterWands = updatedSort.filter((wand) =>
     wand.core.toLocaleUpperCase().includes(query.toLocaleUpperCase())

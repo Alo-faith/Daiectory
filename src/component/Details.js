@@ -1,9 +1,20 @@
 import React, { useState } from "react";
-
 import { useParams, Link, Redirect } from "react-router-dom";
 
+//  component
+import WandsItem from "./WandsItem";
+import Recomanded from "./Recomanded";
+
+// data
+import wands from "../wands.js";
+
 // styles
-import { WandWrapper, BackImage, DetailsLikesDiv } from "../styles";
+import {
+  WandWrapper,
+  BackImage,
+  DetailsLikesDiv,
+  RecomandedStyle,
+} from "../styles";
 // images
 import likes from "../images/like.png";
 import back from "../images/back.png";
@@ -58,6 +69,9 @@ const Details = ({ wands }) => {
             </div>
           </div>
         </div>
+        <RecomandedStyle>
+          <Recomanded wands={wands} />
+        </RecomandedStyle>
       </WandWrapper>
     </>
   );
